@@ -1,9 +1,31 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import './Todos.css';
+import TodoItem from '../todo-item/TodoItem';
+import Form from '../form/Form';
+import Button from '../button/Button';
 // Listi af verkefnum á forsíðu
 export default function Todos(props) {
-
+   const [showNew, setShowNew] = useState(true);
+  const { data, loading, onFetchNewData } = props;
+  function onClick() {
+    console.log("takki1")
+    setShowNew(false);
+    onFetchNewData(true);
+  }
   return (
-    null
+
+    <React.Fragment>
+    {!loading && (
+      <Button children ="Fela búið"/>
+    )}
+      <div className="todos">
+      {data.map((item, i) => (
+        <TodoItem key={i} todo={item}>
+        </TodoItem>
+      ))}
+      </div>
+      <Form />
+    </React.Fragment>
+
   );
 }

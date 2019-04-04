@@ -26,7 +26,10 @@ export default function Form(props) {
 
   return (
     <form className={css.form} onSubmit={onSubmit}>
-
+      <h2 className={css.form__header}>Nýtt verkefni</h2>
+      <Field title="Titill:"/>
+      <Field title= "Klárast fyrir:" type="datetime-local"/>
+      <Button children ="Búa til"/>
     </form>
   )
 }
