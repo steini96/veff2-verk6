@@ -6,7 +6,15 @@ const { publicRuntimeConfig } = getConfig();
 const { apiUrl } = publicRuntimeConfig;
 
 export async function deleteTodo(id) {
-  /* todo */
+  /*const newURL = "https://veff2-verkefni4.herokuapp.com/";
+  const response = await delete(newURL);
+
+
+  return await response.json();*/
+  return fetch("https://veff2-verkefni4.herokuapp.com/"+id, {
+    method: 'delete'
+  })
+  .then(response => response.json());
 }
 
 export async function addTodo(title, due) {
@@ -18,7 +26,7 @@ export async function updateTodo(id, { title, completed, due } = {}) {
 }
 
 export async function getTodos(hideCompleted = undefined) {
-  const newURL = "https://veff2-verkefni4.herokuapp.com/";//"http://verk4floki.herokuapp.com/";
+  const newURL = "https://veff2-verkefni4.herokuapp.com/";
   const response = await fetch(newURL);
 
   return await response.json();

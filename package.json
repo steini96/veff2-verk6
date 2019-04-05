@@ -2,6 +2,9 @@
   "name": "v6",
   "version": "1.0.0",
   "description": "Verkefni 6",
+  "engines": {
+    "node": "11.6.0"
+  ,
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",

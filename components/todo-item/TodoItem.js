@@ -9,7 +9,7 @@ const { todo } = props;
 
   return (
     <React.Fragment>
-      <div className={"css.item"}>
+      <div className={css.item}>
         <input type="checkbox" className={css.item__input}/>
         <p><Link as={"/todo/"+todo.id} href="/todo/?id=2"><p>{todo.title}</p></Link></p>
         <p className = {css.item__due}>{todo.due}</p>
