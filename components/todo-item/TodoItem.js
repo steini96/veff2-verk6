@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-// import './todoItem.css';
+import './TodoItem.css';
 
 // Verkefni í lista á forsíðu
 export default function todoItem(props) {

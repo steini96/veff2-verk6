@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-//import css from './Data.css';
+import css from './Data.css';
 
 export default function Data(props) {
   const [showNew, setShowNew] = useState(true);

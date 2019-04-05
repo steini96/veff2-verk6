@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Link from 'next/link';
-//import css from './TodoDetail.css'
+import css from './TodoDetail.css'
 import Errors from '../errors/Errors';
 
 import Button from '../button/Button';

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-//import './Layout.css';
+import './Layout.css';
 
 export default ({ children, title }) => (
   <div>
