@@ -23,3 +23,12 @@ export async function getTodos(hideCompleted = undefined) {
 
   return await response.json();
 }
+
+export async function getTodo(id) {
+
+  const todo = await getTodos();
+  const foundTodo = todo.find(i => i.id === Number(id));
+  console.log("logginn: ",todo);
+  return foundTodo;
+
+}

@@ -10,7 +10,7 @@ import { getTodos, updateTodo} from '../api';
 
 function Home(props) {
   const { initialData } = props;
-
+  console.log("kommi: ",props);
   const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(false);
 
@@ -20,15 +20,22 @@ function Home(props) {
      setData(newData);
      setLoading(false);
    }
+   var newData = [];
    console.log(initialData, setData);
+   for(var i=0; i<data.length;i++){
+     if(data[i].completed==false){
+       newData.push(data[i]);
+     }
+   }
 
+   //console.log("newData: ",newData,data.length);
   return (
 
     <div>
     <Layout title="Verkefni">
      <Todos
        loading={loading}
-       data={data}
+       data={newData}
        onFetchNewData={onFetchNewData}
      />
 

@@ -10,9 +10,10 @@ app
   .prepare()
   .then(() => {
     const server = express();
-
-    server.get('/article/:id', (req, res) => {
-      app.render(req, res, '/article', { id: req.params.id });
+    console.log("er inn í server");
+    server.get('/todo/:id', (req, res) => {
+      console.log("er inn í server");
+      app.render(req, res, '/todo', { id: req.params.id });
     });
 
     server.get('*', (req, res) => {
