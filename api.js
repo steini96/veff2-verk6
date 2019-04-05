@@ -6,13 +6,8 @@ const { publicRuntimeConfig } = getConfig();
 const { apiUrl } = publicRuntimeConfig;
 
 export async function deleteTodo(id) {
-  /*const newURL = "https://veff2-verkefni4.herokuapp.com/";
-  const response = await delete(newURL);
-
-
-  return await response.json();*/
   return fetch("https://veff2-verkefni4.herokuapp.com/"+id, {
-    method: 'delete'
+    method: "DELETE",
   })
   .then(response => response.json());
 }

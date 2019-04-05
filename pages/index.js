@@ -13,11 +13,12 @@ function Home(props) {
   console.log("kommi: ",props);
   const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(false);
-  var erTad =true;
+  const [erTad, setErTad] = useState(false);
   async function onFetchNewData(other) {
     console.log("fokkit2");
-     erTad = !erTad;
+     setErTad(!erTad);
      console.log("erTad: ",erTad);
+     setData(await getTodos(!erTad));
    }
    var newData = [];
    console.log(initialData, setData);
@@ -29,8 +30,7 @@ function Home(props) {
        newData.push(data[i]);
      }
    }}
-
-   //console.log("newData: ",newData,data.length);
+      //console.log("newData: ",newData,data.length);
   return (
 
     <div>
