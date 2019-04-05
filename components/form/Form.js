@@ -6,7 +6,7 @@ import Button from '../button/Button';
 import Field from '../field/Field';
 import Errors from '../errors/Errors';
 
-import css from './Form.css';
+//import css from './Form.css';
 
 // Form á forsíðu
 export default function Form(props) {
