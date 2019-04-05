@@ -17,7 +17,12 @@ export async function addTodo(title, due) {
 }
 
 export async function updateTodo(id, { title, completed, due } = {}) {
-  /* todo */
+  console.log("update fall: ",id,title);
+  await fetch("https://veff2-verkefni4.herokuapp.com/"+id, {
+        method: 'PATCH',
+        headers: { "Content-Type": "application/json"},
+        body: "completed="+!completed,
+    });
 }
 
 export async function getTodos(hideCompleted = undefined) {

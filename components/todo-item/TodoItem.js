@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import './TodoItem.css';
-
+import { updateTodo } from '../../api';
 // Verkefni í lista á forsíðu
 export default function todoItem(props) {
 
 const { todo } = props;
 
 function onClick() {
+  console.log("completed: ",todo.completed,todo);
 
+  const todoDelete = updateTodo(todo.id,todo);
 }
   return (
     <React.Fragment>
