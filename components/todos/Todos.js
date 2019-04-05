@@ -8,7 +8,7 @@ export default function Todos(props) {
    const [showNew, setShowNew] = useState(true);
   const { data, loading, onFetchNewData } = props;
   function onClick() {
-    console.log("takki1")
+    console.log("fokkit");
     setShowNew(false);
     onFetchNewData(true);
   }
@@ -16,7 +16,7 @@ export default function Todos(props) {
 
     <React.Fragment>
     {!loading && (
-      <Button children ="Fela búið"/>
+      <Button onClick={onClick} children ="Fela búið"/>
     )}
       <div className="todos">
       {data.map((item, i) => (

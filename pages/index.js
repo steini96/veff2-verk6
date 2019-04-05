@@ -13,20 +13,22 @@ function Home(props) {
   console.log("kommi: ",props);
   const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(false);
-
+  var erTad =true;
   async function onFetchNewData(other) {
-     setLoading(true);
-     const newData = await getTodos(other);
-     setData(newData);
-     setLoading(false);
+    console.log("fokkit2");
+     erTad = !erTad;
+     console.log("erTad: ",erTad);
    }
    var newData = [];
    console.log(initialData, setData);
+   if(erTad){
+     newData = data;
+   }else{
    for(var i=0; i<data.length;i++){
      if(data[i].completed==false){
        newData.push(data[i]);
      }
-   }
+   }}
 
    //console.log("newData: ",newData,data.length);
   return (

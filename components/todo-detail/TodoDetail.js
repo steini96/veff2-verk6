@@ -37,23 +37,27 @@ export default function todoDetail(props) {
 
     <React.Fragment>
       <div className={css.todoDetail__list}>
-
-        <p className={css.todoDetail__term}>Titill:</p>
-        <input className={css.todoDetail__input} value={todo.title} type="testarea" />
-
-        <p className={css.todoDetail__term}>Lokið:</p>
+        <div className = {css.weirdFlex}>
+        <div className={css.todoDetail__term}>Titill:</div>
+        <input className={css.todoDetail__input} value={todo.title} type="textarea" />
+        </div>
+        <div className = {css.weirdFlex}>
+        <div className={css.todoDetail__term}>Lokið:</div>
         {todo.completed ? <input className={css.todoDetail__checkbox} type="checkbox" checked /> :
         <input className={css.todoDetail__checkbox} type="checkbox" />}
-
-
-        <p className={css.todoDetail__term}>Klárast fyrir:</p>
+        </div>
+        <div className = {css.weirdFlex}>
+        <div className={css.todoDetail__term}>Klárast fyrir:</div>
         <input className={css.todoDetail__input} type="datetime-local" />
-
-        <p className={css.todoDetail__term}>Uppfært:</p>
-        <p className={css.todoDetail__definition}>{todo.updated}</p>
-
+        </div>
+        <div className = {css.weirdFlex}>
+        <div className={css.todoDetail__term}>Uppfært:</div>
+        <div className={css.todoDetail__definition}>{todo.updated}</div>
+        </div>
+        <div className = {css.weirdFlex}>
         <div className={css.todoDetail__term}>Búið til:</div>
         <div className={css.todoDetail__definition}>{todo.created}</div>
+        </div>
       </div>
 
       <div className={css.todoDetail__buttons}>
